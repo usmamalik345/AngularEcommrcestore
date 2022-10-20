@@ -26,11 +26,12 @@ export class CartService {
     console.log(this.cartItemsList);
   }
 
-  getTotalPrice() {
+  getTotalPrice() : number{
     let grandTotal = 0;
     this.cartItemsList.map((a: any) => {
       grandTotal += a.total;
     });
+    return grandTotal
   }
   removeCartItems(product: any) {
     this.cartItemsList.map((a: any, index: any) => {
