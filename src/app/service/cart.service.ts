@@ -23,6 +23,7 @@ export class CartService {
     this.cartItemsList.push(product);
     this.productList.next(this.cartItemsList);
     this.getTotalPrice();
+    console.log(this.cartItemsList);
   }
 
   getTotalPrice() {
@@ -31,11 +32,16 @@ export class CartService {
       grandTotal += a.total;
     });
   }
-  removeCartItems(product: any ){
-    this.cartItemsList.map((a: any, index:any )=>{
+  removeCartItems(product: any) {
+    this.cartItemsList.map((a: any, index: any) => {
       if (product.id === a.id) {
-        this.
+        this.cartItemsList.splice(index, 1);
       }
-    })
+    });
+  }
+
+  removeAllCart() {
+    this.cartItemsList = [];
+    this.productList.next(this.cartItemsList);
   }
 }
