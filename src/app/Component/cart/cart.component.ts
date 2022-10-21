@@ -18,8 +18,9 @@ export class CartComponent implements OnInit {
       this.grandTotal = this.cartService.getTotalPrice();
     });
   }
-  removeItem(item: any) {
+  removeItems(item: any) {
     this.cartService.removeCartItems(item);
+    console.log('click');
   }
   emptyService() {
     this.cartService.removeAllCart();
