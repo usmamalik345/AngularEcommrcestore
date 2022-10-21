@@ -38,7 +38,9 @@ export class CartService {
       if (product.id === a.id) {
         this.cartItemsList.splice(index, 1);
       }
+      this.productList.next(this.cartItemsList)
     });
+    
   }
 
   removeAllCart() {
