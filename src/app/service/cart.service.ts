@@ -10,14 +10,12 @@ export class CartService {
 
   constructor() {}
 
-  getProduct() {
-    return this.productList.asObservable();
-  }
+ 
 
   setProduct(product: any) {
     this.cartItemsList.push(...product);
     this.productList.next(product);
-  }
+  } 
 
   addToCart(product: any) {
     this.cartItemsList.push(product);

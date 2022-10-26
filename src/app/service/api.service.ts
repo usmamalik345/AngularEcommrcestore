@@ -10,7 +10,7 @@ export class ApiService {
 
   getProduct() {
     return this.http.get<any>(' https://fakestoreapi.com/products/').pipe(
-      map((res) => {
+      map ((res) => {
         return res;
       })
     );
