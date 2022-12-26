@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/service/api.service';
 import { CartService } from 'src/app/service/cart.service';
 
 @Component({
@@ -10,11 +11,11 @@ export class HeaderComponent implements OnInit {
 
   public cartCount: number = 0
 
-  constructor(private cartService : CartService) { }
+  constructor(private cartService : CartService, private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.cartService.getProduct().subscribe(res=>{
-      this.cartCount = res.length
+    this.apiService.getProduct().subscribe( (res: any ) =>{
+     this.cartCount = res.length
     }) 
    
 

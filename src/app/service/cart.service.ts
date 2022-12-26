@@ -5,9 +5,9 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CartService {
-  getProduct() {
-    throw new Error('Method not implemented.');
-  }
+  //  getProduct() {
+  //   throw new Error('Method not implemented.');
+  // }
   public cartItemsList: any = [];
   public productList = new BehaviorSubject<any>([]);
 
